@@ -1,0 +1,40 @@
+{
+  "manifestVersion": 1.0,
+  "id": "jannis-samples-work-item-form",
+  "version": "0.1.3",
+  "name": "Work Item Form Sample",
+  "description": "Explore how to extend the work item form with new sections, actions, and more.",
+  "public": false,
+  "publisher": "JannisBusch",
+  "tags": ["Sample"],
+  "categories": ["Azure Boards"],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "scopes": ["vso.work", "vso.work_write"],
+  "files": [
+    {
+      "path": "workItemGroup.html",
+      "addressable": true
+    },
+    {
+      "path": "bower_components/vss-web-extension-sdk/lib/VSS.SDK.min.js",
+      "addressable": true
+    }
+  ],
+  "contributions": [
+    {
+      "id": "sample-work-item-form-group",
+      "type": "ms.vss-work-web.work-item-form-group",
+      "description": "Custom work item form group",
+      "targets": ["ms.vss-work-web.work-item-form"],
+      "properties": {
+        "name": "My Group",
+        "uri": "workItemGroup.html",
+        "height": 600
+      }
+    }
+  ]
+}
